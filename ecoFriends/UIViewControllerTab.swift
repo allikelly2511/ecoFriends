@@ -10,9 +10,10 @@ import UIKit
 
 class UIViewControllerTab: UITabBarController {
 
-    @IBOutlet var myTabBar: UITabBar!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedIndex = 2
         //myTabBar.selectedItem = 2
         // Do any additional setup after loading the view.
     }
