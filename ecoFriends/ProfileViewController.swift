@@ -109,9 +109,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         cell.currentPlantImage.image = plantImages[indexPath.item]
         cell.plantProgress.progress = Float(plantProgress[indexPath.item])
+        
+        
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.item)
     }
