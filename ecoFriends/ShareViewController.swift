@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ShareViewController: UIViewController {
 
@@ -39,15 +40,40 @@ class ShareViewController: UIViewController {
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension ShareViewController: MFMessageComposeViewControllerDelegate{
+
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch (result) {
+        case .cancelled:
+            print("Message was cancelled")
+            dismiss(animated: true, completion: nil)
+        case .failed:
+            print("Message failed")
+            dismiss(animated: true, completion: nil)
+        case .sent:
+            print("Message sent")
+            dismiss(animated: true, completion: nil)
+        default:
+            break
+        }
     }
-    */
 
+    @IBAction func sendMessage(_ sender: Any){
+        if MFMessageComposeViewController.canSendText(){
+            let messageVC = MFMessageComposeViewController()
+            
+            messageVC.body = "Check out this new plant I grew on ecoFriends by being environmentally friendly. Join me at: www.ecofriends.com/"
+            if let imageData = UIImage(named: "funPlant")?.pngData(){
+                messageVC.addAttachmentData(imageData, typeIdentifier: "public.data", filename: "funPlant.png")
+            }
+            messageVC.messageComposeDelegate = self
+            
+            self.present(messageVC, animated: true, completion: nil)
+        } else {
+            print("Message couldn't be sent")
+        }
+    }
 }

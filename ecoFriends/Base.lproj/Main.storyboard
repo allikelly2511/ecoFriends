@@ -234,6 +234,9 @@
                                 <state key="normal" title="Text a Friend">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendMessage:" destination="B94-Gm-fmE" eventType="touchUpInside" id="LyS-cd-EDg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
