@@ -12,8 +12,8 @@
 		420A291023EC5EBC00CE19DB /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420A290F23EC5EBC00CE19DB /* ShareViewController.swift */; };
 		420A291223EC5EEB00CE19DB /* ReachOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420A291123EC5EEB00CE19DB /* ReachOutViewController.swift */; };
 		42264B9323FD89F600E63B7D /* pictureShareTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42264B9223FD89F600E63B7D /* pictureShareTableViewCell.swift */; };
+		4256878A241150F00072D353 /* resourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42568789241150F00072D353 /* resourceViewController.swift */; };
 		427C9EBB23FEE07C00D49E80 /* UIViewControllerTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C9EBA23FEE07C00D49E80 /* UIViewControllerTab.swift */; };
-		42827769240FFDB400FDA50A /* resourcesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42827768240FFDB400FDA50A /* resourcesTableViewController.swift */; };
 		42A4734123E4749800AF6D5F /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A4734023E4749800AF6D5F /* WebVC.swift */; };
 		42AC7D9023E1CD4B0027C1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC7D8F23E1CD4B0027C1F5 /* AppDelegate.swift */; };
 		42AC7D9223E1CD4B0027C1F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC7D9123E1CD4B0027C1F5 /* SceneDelegate.swift */; };
@@ -49,8 +49,8 @@
 		420A290F23EC5EBC00CE19DB /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		420A291123EC5EEB00CE19DB /* ReachOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachOutViewController.swift; sourceTree = "<group>"; };
 		42264B9223FD89F600E63B7D /* pictureShareTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pictureShareTableViewCell.swift; sourceTree = "<group>"; };
+		42568789241150F00072D353 /* resourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourceViewController.swift; sourceTree = "<group>"; };
 		427C9EBA23FEE07C00D49E80 /* UIViewControllerTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerTab.swift; sourceTree = "<group>"; };
-		42827768240FFDB400FDA50A /* resourcesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resourcesTableViewController.swift; sourceTree = "<group>"; };
 		42A4734023E4749800AF6D5F /* WebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		42AC7D8C23E1CD4B0027C1F5 /* ecoFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecoFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AC7D8F23E1CD4B0027C1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 				42AC7D9123E1CD4B0027C1F5 /* SceneDelegate.swift */,
 				42AC7D9323E1CD4B0027C1F5 /* ViewController.swift */,
 				42AC7D9523E1CD4B0027C1F5 /* Main.storyboard */,
-				42827768240FFDB400FDA50A /* resourcesTableViewController.swift */,
+				42568789241150F00072D353 /* resourceViewController.swift */,
 				427C9EBA23FEE07C00D49E80 /* UIViewControllerTab.swift */,
 				42264B9223FD89F600E63B7D /* pictureShareTableViewCell.swift */,
 				420A291123EC5EEB00CE19DB /* ReachOutViewController.swift */,
@@ -289,10 +289,10 @@
 				42264B9323FD89F600E63B7D /* pictureShareTableViewCell.swift in Sources */,
 				420A291023EC5EBC00CE19DB /* ShareViewController.swift in Sources */,
 				420A291223EC5EEB00CE19DB /* ReachOutViewController.swift in Sources */,
-				42827769240FFDB400FDA50A /* resourcesTableViewController.swift in Sources */,
 				42CCC69B23FC31E000437F6F /* CollectionViewCell.swift in Sources */,
 				420A290E23EC5E8100CE19DB /* ProfileViewController.swift in Sources */,
 				42AC7D9423E1CD4B0027C1F5 /* ViewController.swift in Sources */,
+				4256878A241150F00072D353 /* resourceViewController.swift in Sources */,
 				42A4734123E4749800AF6D5F /* WebVC.swift in Sources */,
 				42AC7D9023E1CD4B0027C1F5 /* AppDelegate.swift in Sources */,
 				420A290C23EC5E3C00CE19DB /* CommunityViewController.swift in Sources */,
