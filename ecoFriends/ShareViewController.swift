@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 import MessageUI
 
 class ShareViewController: UIViewController {
@@ -41,6 +42,24 @@ class ShareViewController: UIViewController {
         }
     }
 
+    @IBAction func twitterButtonPressed(_ sender: Any) {
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter){
+            vc.setInitialText("Check out this new plant I grew on ecoFriends by being environmentally friendly. Join me at: http://www.ecofriends.com/")
+            vc.add(UIImage(named: "funPlant"))
+            present(vc, animated: true)
+        }
+    }
+    
+    
+    @IBAction func facebookButtonPressed(_ sender: Any) {
+        if let vc = SLComposeViewController(forServiceType: SLServiceTypeFacebook){
+            vc.setInitialText("Check out this new plant I grew on ecoFriends by being environmentally friendly. Join me by searching ecoFriends on the app store")
+            vc.add(UIImage(named: "emptyPot"))
+            present(vc, animated: true)
+        }
+    }
+    
+    
 }
 
 extension ShareViewController: MFMessageComposeViewControllerDelegate{
