@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var typeOfPlants: UISegmentedControl!
     @IBOutlet var typeOfPlantsLabel: UILabel!
     @IBOutlet var tableViewYeah: UITableView!
+    @IBOutlet var collectionViewYeah: UICollectionView!
     var selectedIndex = 0
     var lifestyleChangesArray = ["Go Vegan", "Switch to renewable energy", "Buy an electric car"]
     var pollutionArray = ["Use a reusable straw", "Bring reusable bags to the store"]
@@ -22,8 +23,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var energyArrayPoints = [10, 5, 3]
     var wasteArray = ["Buy an item in bulk", "Use a reusable mug"]
     var wasteArrayPoints = [1, 3]
-    var plantImages = [UIImage(named: "cactus"), UIImage(named: "funPlant"), UIImage(named: "emptyPot")]
-    var plantProgress = [0.25, 0.75, 0.0]
+    var energyPlantImages = [UIImage(named: "funPlant")]
+    var pollutionPlantImages = [UIImage(named: "emptyPot")]
+    var wastePlantImages = [UIImage(named: "cactus")]
+    var lifestylePlantImages = [UIImage(named: "emptyPot")]
+    var wastePlantProgress = [0.0]
+    var pollutionPlantProgress = [0.0]
+    var energyPlantProgress = [0.0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,8 +83,60 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (selectedIndex == 3){
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        } else if (selectedIndex == 2){
+            energyPlantProgress[0] = energyPlantProgress[0] + Double((energyArrayPoints[indexPath.row]/100))
+            collectionViewYeah.reloadData()
+        } else if (selectedIndex == 1){
+            pollutionPlantProgress[0] = pollutionPlantProgress[0] + Double((pollutionArrayPoints[indexPath.row]/100))
+            collectionViewYeah.reloadData()
+        } else {
+            wastePlantProgress[0] = wastePlantProgress[0] + Double((wasteArrayPoints[indexPath.row]/100))
+            collectionViewYeah.reloadData()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (selectedIndex == 3){
+            return(lifestylePlantImages.count)
+        }else if (selectedIndex == 0){
+            return(wastePlantImages.count)
+        }else if (selectedIndex == 1){
+            return(pollutionPlantImages.count)
+        }else{
+            return(energyPlantImages.count)
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if (selectedIndex == 3){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+            cell.currentPlantImage.image = lifestylePlantImages[indexPath.item]
+            return(cell)
+        }else if (selectedIndex == 0){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+            cell.currentPlantImage.image = energyPlantImages[indexPath.item]
+            cell.plantProgress.progress = Float(energyPlantProgress[indexPath.item])
+            return(cell)
+        }else if (selectedIndex == 1){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+            cell.currentPlantImage.image = pollutionPlantImages[indexPath.item]
+            cell.plantProgress.progress = Float(pollutionPlantProgress[indexPath.item])
+            return(cell)
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+            cell.currentPlantImage.image = wastePlantImages[indexPath.item]
+            cell.plantProgress.progress = Float(wastePlantProgress[indexPath.item])
+            return(cell)
+        }
+        
+    }
+    
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+    }
+
     
     @IBAction func typeOfPlantsTapped(_ sender: UISegmentedControl) {
         if typeOfPlants.selectedSegmentIndex == 0{
@@ -95,28 +153,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             selectedIndex = 3
         }
         tableViewYeah.reloadData()
+        collectionViewYeah.reloadData()
         
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return plantImages.count
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        
-        cell.currentPlantImage.image = plantImages[indexPath.item]
-        cell.plantProgress.progress = Float(plantProgress[indexPath.item])
-        
-        
-        return cell
-    }
-    
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
-    }
-    
 
 }

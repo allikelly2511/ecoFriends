@@ -321,15 +321,15 @@
                                                     <action selector="typeOfPlantsTapped:" destination="zJe-QF-aj1" eventType="valueChanged" id="466-yu-4Qp"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Garden Focuses on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-2g-Vj6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Garden Focuses on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTl-2g-Vj6">
                                                 <rect key="frame" x="0.0" y="29.999999999999996" width="269" height="47.666666666666657"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waste Reduction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4L-DW-sRI">
                                                 <rect key="frame" x="0.0" y="77.666666666666657" width="269" height="47.333333333333343"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -473,6 +473,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.square.fill" catalog="system" id="4Fh-i5-JJb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="collectionViewYeah" destination="Kgu-Tt-vOV" id="QJa-eO-Can"/>
                         <outlet property="tableViewYeah" destination="AoM-89-bNS" id="5tj-9f-3Zn"/>
                         <outlet property="typeOfPlants" destination="dnN-Dp-Ycb" id="J56-cb-7Mf"/>
                         <outlet property="typeOfPlantsLabel" destination="t4L-DW-sRI" id="hZf-7I-eLF"/>
@@ -535,7 +536,7 @@
                                                     <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="jjb-UG-K5u" kind="show" id="OQA-PQ-h2A"/>
+                                                    <segue destination="JUl-hG-86z" kind="show" id="OQA-PQ-h2A"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -559,7 +560,7 @@
             </objects>
             <point key="canvasLocation" x="1553.6231884057972" y="518.30357142857144"/>
         </scene>
-        <!--Resource View Controller-->
+        <!--Additional Resources-->
         <scene sceneID="fhp-S0-Xlq">
             <objects>
                 <viewController id="jjb-UG-K5u" customClass="resourceViewController" customModule="ecoFriends" customModuleProvider="target" sceneMemberID="viewController">
@@ -568,10 +569,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NwU-wo-6ug">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="resourceCell" textLabel="RYK-eN-E8N" detailTextLabel="ffU-2j-uT9" rowHeight="82" style="IBUITableViewCellStyleSubtitle" id="cfd-7X-ztz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="resourceCell" textLabel="RYK-eN-E8N" detailTextLabel="ffU-2j-uT9" imageView="ecg-Vp-FTW" rowHeight="82" style="IBUITableViewCellStyleSubtitle" id="cfd-7X-ztz" customClass="resourcesCellTableViewCell" customModule="ecoFriends" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cfd-7X-ztz" id="ma3-rD-gx9">
@@ -579,19 +580,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RYK-eN-E8N">
-                                                    <rect key="frame" x="20.000000000000004" y="21" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <rect key="frame" x="158" y="21" width="33.333333333333336" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ffU-2j-uT9">
-                                                    <rect key="frame" x="19.999999999999996" y="44.333333333333329" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <rect key="frame" x="158" y="44.333333333333329" width="43.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="recycling" id="ecg-Vp-FTW">
+                                                    <rect key="frame" x="20" y="0.0" width="123" height="82"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -611,21 +616,24 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f2A-3w-6fc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Abj-d2-VqJ"/>
+                    <navigationItem key="navigationItem" title="Additional Resources" id="Abj-d2-VqJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="NwU-wo-6ug" id="9aF-lF-B1G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSX-wg-qVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2418.840579710145" y="517.63392857142856"/>
+            <point key="canvasLocation" x="3328.985507246377" y="517.63392857142856"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="gGm-Yw-UvI">
+        <!--Resources Detail View Controller-->
+        <scene sceneID="7kI-J7-3c6">
             <objects>
-                <viewController id="3yP-b3-mKE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zK4-72-QZp">
+                <viewController storyboardIdentifier="resourcesDetailViewController" id="g0B-J3-S53" customClass="resourcesDetailViewController" customModule="ecoFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pky-WA-I2l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHn-bj-qCN">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YEP-wf-Sj2">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
@@ -636,17 +644,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="kHn-bj-qCN" firstAttribute="top" secondItem="g6G-zE-Ieb" secondAttribute="top" id="FoD-kp-Nw7"/>
-                            <constraint firstItem="kHn-bj-qCN" firstAttribute="leading" secondItem="g6G-zE-Ieb" secondAttribute="leading" id="b4w-Am-LvR"/>
-                            <constraint firstItem="g6G-zE-Ieb" firstAttribute="bottom" secondItem="kHn-bj-qCN" secondAttribute="bottom" id="heB-bm-qtF"/>
-                            <constraint firstItem="g6G-zE-Ieb" firstAttribute="trailing" secondItem="kHn-bj-qCN" secondAttribute="trailing" id="p0W-zY-1V6"/>
+                            <constraint firstItem="YEP-wf-Sj2" firstAttribute="top" secondItem="dfd-8O-kyd" secondAttribute="top" id="ALj-d6-hag"/>
+                            <constraint firstItem="dfd-8O-kyd" firstAttribute="bottom" secondItem="YEP-wf-Sj2" secondAttribute="bottom" id="MMx-PI-OTg"/>
+                            <constraint firstItem="YEP-wf-Sj2" firstAttribute="leading" secondItem="dfd-8O-kyd" secondAttribute="leading" id="dVy-T0-QLq"/>
+                            <constraint firstItem="dfd-8O-kyd" firstAttribute="trailing" secondItem="YEP-wf-Sj2" secondAttribute="trailing" id="gRt-pq-uVR"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="g6G-zE-Ieb"/>
+                        <viewLayoutGuide key="safeArea" id="dfd-8O-kyd"/>
                     </view>
+                    <connections>
+                        <outlet property="resourcesWebView" destination="YEP-wf-Sj2" id="DBs-wm-egv"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tla-cH-oQw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qer-KG-UVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3107" y="632"/>
+            <point key="canvasLocation" x="4035" y="520"/>
         </scene>
         <!--News-->
         <scene sceneID="vke-0T-NYd">
@@ -719,6 +730,25 @@
             </objects>
             <point key="canvasLocation" x="-112" y="155"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AOR-Ob-aOQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JUl-hG-86z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="eub-Lv-HZC"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zhp-1e-VlG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jjb-UG-K5u" kind="relationship" relationship="rootViewController" id="qZL-8P-Rcl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMq-dL-5Pc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2418.840579710145" y="517.63392857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="64" height="52"/>
@@ -728,6 +758,7 @@
         <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
         <image name="profile" width="280" height="280"/>
+        <image name="recycling" width="612" height="408"/>
         <image name="text.quote" catalog="system" width="64" height="50"/>
         <image name="treePlanting" width="225" height="225"/>
     </resources>
